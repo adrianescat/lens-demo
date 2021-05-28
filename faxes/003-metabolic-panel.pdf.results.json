@@ -1,0 +1,15 @@
+{
+  "patient": {
+    "dateOfBirth": "1940-06-12T00:00:00",
+    "emrId": "MT00034",
+    "firstName": "Michael",
+    "homePhone": "650-477-4676",
+    "lastName": "Thompson",
+    "middleName": "B",
+    "mobilePhone": "",
+    "workPhone": ""
+  },
+  "patientScore": 70.97112000000001,
+  "summary": "Metabolic Lab Report",
+  "summaryScore": 1.3
+}

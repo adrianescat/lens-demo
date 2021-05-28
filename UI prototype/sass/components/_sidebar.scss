@@ -1,0 +1,408 @@
+//       SUMMARY TABLE     
+// =========================
+// 1. Global
+// =========================
+
+
+// 1. Global
+// =========================
+
+.sidebar {
+	position: fixed;
+	right: 0;
+	top: 0;
+	height: 100%;
+	overflow: auto;
+	width: 320px;
+	padding-top: 7.5rem;
+	@include transform(translateZ(0));
+
+	.redo {
+		position: absolute;
+		top: 3rem;
+		right: 2rem;
+		width: 1.8rem;
+		height: 1.8rem;
+		cursor: pointer;
+
+		lottie-player {
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -14px;
+			margin-left: -14px;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: url(../img/redo.svg) no-repeat center;
+			background-size: contain;
+		}
+
+		&:hover {
+			&:before {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			lottie-player {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	.undo {
+		position: absolute;
+		top: 3rem;
+		right: 7rem;
+		width: 1.8rem;
+		height: 1.8rem;
+		cursor: pointer;
+
+		lottie-player {
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -14px;
+			margin-left: -14px;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: url(../img/undo.svg) no-repeat center;
+			background-size: contain;
+		}
+
+		&:hover {
+			&:before {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			lottie-player {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	h3 {
+		margin-left: 3rem;
+	}
+
+	&__group {
+		margin-bottom: 3rem;
+		@include transform(translateZ(0));
+
+		&__title {
+			display: table;
+			padding-left: 3rem;
+			text-transform: uppercase;
+			font-family: 'MSemiBold';
+			color: #a9a9a9;
+			margin-bottom: 0.5rem;
+			font-size: 0.975rem;
+			letter-spacing: 1px;
+		}
+
+		&__item {
+			margin: auto;
+			@include transition(all 0.4s $smooth);
+			width: 100%;
+			@include transform(translateZ(0));
+			max-height: 5rem;
+			position: relative;
+
+			&.done {
+				overflow: hidden;
+				max-height: 0;
+			}
+
+			&__title {
+				cursor: pointer;
+				display: table;
+				width: 100%;
+				font-size: 1.4rem;
+				padding-left: 3rem;
+				padding-top: 1.4rem;
+				border-bottom: 1px solid transparent;
+				padding-bottom: 1.4rem;
+				font-family: 'MMedium';
+				color: #313131;
+				position: relative;
+				@include transition(all 0.2s $smooth);
+				@include transform(translate3d(0, 0, 0));
+
+				.delete {
+					display: block;
+					position: absolute;
+					left: 1.5rem;
+					top: 55%;
+					@include transform(translate3d(0, -50%, 0));
+					opacity: 0;
+					visibility: hidden;
+					@include transition(all 0.3s $smooth);
+
+					&:before {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 0.2rem;
+						left: 0.2rem;
+						height: 1.3rem;
+						width: 1.3rem;
+						background: url(../img/trash.svg) no-repeat center;
+						background-size: contain;
+					}
+
+					lottie-player {
+						opacity: 0;
+						visibility: hidden;
+					}
+
+					&.animate {
+						&:before {
+							opacity: 0;
+							visibility: hidden;
+						}
+
+						lottie-player {
+							opacity: 1;
+							visibility: visible;
+						}
+					}
+				}
+
+				&:hover {
+					background-color: #f6f6f6;
+					border-color: #f6f6f6;
+				}
+			}
+
+
+			&__subcontent {
+				opacity: 0;
+				visibility: hidden;
+				@include transition(all 0.3s $smooth);
+
+				&__footer {
+					display: flex;
+					padding: 2rem 3rem;
+					justify-content: flex-end;
+
+					&__link {
+						font-family: 'MSemiBold';
+						font-size: 1.2rem;
+						letter-spacing: 1px;
+						text-transform: uppercase;
+						color: #303030;
+					}
+				}
+				
+			}
+
+			&.active {
+				box-shadow: -9px 10px 17px 0px rgba(243,243,243,1);
+				width: 90%;
+				max-height: 15rem;
+				padding-top: 1.5rem;
+				z-index: 2;
+
+				.sidebar__group__item {
+
+					&__subcontent {
+						opacity: 1;
+						visibility: visible;
+					}
+
+					&__title {
+						border-bottom-color: #f0f0f0;
+
+						&:hover {
+							background-color: transparent;
+							padding-left: 4rem;
+
+							.delete, .drop {
+								opacity: 1;
+								visibility: visible;
+							}
+
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__tab {
+		opacity: 0;
+		visibility: hidden;
+		@include transition(all 0.4s $smooth);
+
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			@include transition(all 0.4s $smooth .2s);
+		}
+	}
+
+	&__tab__done {
+		position: absolute;
+		top: 25.8rem;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+	}
+
+	&__tabs {
+		display: flex;
+		margin-top: 5rem;
+		margin-bottom: 5rem;
+
+		&__item {
+			border-bottom: 1px solid #f0f0f0;
+			color: #767676;
+			font-family: 'MMedium';
+			height: 5rem;
+			width: 50%;
+			font-size: 1.4rem;
+			text-align: center;
+			line-height: 5rem;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			position: relative;
+			@include transition(all 0.4s $smooth);
+
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 2px;
+				width: 100%;
+				background-color: #313131;
+				opacity: 0;
+				visibility: hidden;
+				@include transition(all 0.4s $smooth);
+			}
+
+			&:hover {
+				&:after {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+
+			&.active {
+				background-color: #f6f6f6;
+				color: #313131;
+
+				&:after {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+}
+
+
+.drop {
+	position: absolute;
+	right: 3rem;
+	opacity: 0;
+	visibility: hidden;
+	@include transition(all 0.3s $smooth);
+
+	&__title {
+		text-transform: uppercase;
+		font-size: 9.75px;
+		color: #a9a9a9;
+		font-family: 'MSemiBold';
+		letter-spacing: 1px;
+		@include transition(all 0.3s $smooth);
+
+		&:hover {
+			color: #313131;
+		}
+	}
+
+
+	&__menu {
+		box-shadow: -9px 10px 17px 0px rgba(243,243,243,1);
+		position: absolute;
+		width: 16rem;
+		background-color: #fff;
+		right: 0;
+		top: 2rem;
+		border-radius: 4px;
+		opacity: 0;
+		visibility: hidden;
+		z-index: 5;
+
+		&.active {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		&__item {
+			display: flex;
+			justify-content: space-between;
+			font-family: 'MMedium';
+			font-size: 1.2rem;
+			color: #313131;
+			height: 4rem;
+			line-height: 4rem;
+			padding-right: 3rem;
+			padding-left: 3rem;
+			@include transition(all 0.3s $smooth);
+
+			&.active {
+				color: #0080ff;
+			}
+		}
+	}
+
+	&-action {
+		.drop__menu {
+			&__item {
+				color: #a1a1a1;
+
+				&:hover {
+					background-color: #f6f6f6;
+				}
+			}
+		}
+	}
+
+	&-info {
+		.drop__menu__item span {
+			color: #a9a9a9;
+		}
+
+		.drop__menu__item:hover {
+			span {
+				color: #0080ff;
+			}
+		}
+	}
+}
+
+

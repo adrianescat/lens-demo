@@ -1,0 +1,34 @@
+{
+  "documentTransformations": [
+    {"op": "rotate", "degrees": 185}
+  ],
+  "patient": {
+    "dateOfBirth": "1940-06-12T00:00:00",
+    "emrId": "MT00034",
+    "firstName": "Michael",
+    "homePhone": "650-477-4676",
+    "lastName": "Thompson",
+    "middleName": "B",
+    "mobilePhone": "",
+    "workPhone": ""
+  },
+  "patientScore": 453.55118400000003,
+  "summary": "Prescription Request",
+  "summaryScore": 0.9,
+  "medications" : [
+    {
+      "name": "Spironolactone",
+      "humanName": "Spironolactone",
+      "drugBankCode": "DB00421",
+      "confidence": 1.0,
+      "weight": 0.9,
+      "page": 0,
+      "box": {
+        "t": 945,
+        "b": 1020,
+        "l": 480,
+        "r": 802
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "lens",
+  "version": "1.0.0",
+  "description": "lens",
+  "main": "index.js",
+  "author": "",
+  "license": "",
+  "homepage": "",
+  "scripts": {
+    "watch": "gulp watch"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  }
+}
