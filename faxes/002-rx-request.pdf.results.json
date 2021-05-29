@@ -16,9 +16,10 @@
     "workPhone": ""
   },
   "patientScore": 453.55118400000003,
+  "lastUpdated": "2021-02-12T00:00:00",
   "urgent": false,
   "summary": "Prescription Request",
-  "summaryLabel": "prescription_request",
+  "summaryLabel": "rx_prescription_request",
   "summaryScore": 0.9,
   "fileId": "g1265sqd",
   "medications": [

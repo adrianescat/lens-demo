@@ -1,3 +1,9 @@
+export enum LensType {
+  HISTORY = 'history',
+  RX_PRESC_REQ = 'rx_prescription_request',
+  METAB_LAB_REPORT = 'metabolic_lab_report',
+}
+
 export type Patient = {
   dateOfBirth: string,
   emrId: string,
@@ -64,10 +70,11 @@ export type Lens = {
   patient: Patient,
   patientScore: number,
   summary: string,
-  summaryLabel: string,
+  summaryLabel: LensType,
   summaryScore: number,
   urgent: boolean,
   fileId: string,
+  lastUpdated: string,
   flags?: Array<Flag>,
   problems?: Array<Problem>,
   allergies?: Array<Allergy>,

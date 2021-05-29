@@ -30,7 +30,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 930px) {
   .aside {
     flex-direction: row;
     width: 20%;
@@ -40,8 +40,8 @@
     ul {
     width: 100%;
     display: flex;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
   }
   }
