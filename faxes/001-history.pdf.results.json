@@ -11,8 +11,11 @@
   },
   "patientScore": 114.562,
   "summary": "Medical History",
+  "summaryLabel": "history",
   "summaryScore": 0.4,
-  "flags" : [
+  "urgent": true,
+  "fileId": "7123as1",
+  "flags": [
     {
       "name": "PrimaryCareProvider/FollowUp",
       "humanName": "Follow up",
@@ -40,7 +43,7 @@
       }
     }
   ],
-  "problems" : [
+  "problems": [
     {
       "name": "SleepApnea",
       "humanName": "Sleep apnea",
@@ -70,7 +73,7 @@
       }
     }
   ],
-  "allergies" : [
+  "allergies": [
     {
       "name": "Penacillin",
       "humanName": "Penacillin",
@@ -86,7 +89,7 @@
       }
     }
   ],
-  "medications" : [
+  "medications": [
     {
       "name": "Aspirin",
       "humanName": "Aspirin",

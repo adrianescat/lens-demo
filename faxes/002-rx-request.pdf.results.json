@@ -1,6 +1,9 @@
 {
   "documentTransformations": [
-    {"op": "rotate", "degrees": 185}
+    {
+      "op": "rotate",
+      "degrees": 185
+    }
   ],
   "patient": {
     "dateOfBirth": "1940-06-12T00:00:00",
@@ -13,9 +16,12 @@
     "workPhone": ""
   },
   "patientScore": 453.55118400000003,
+  "urgent": false,
   "summary": "Prescription Request",
+  "summaryLabel": "prescription_request",
   "summaryScore": 0.9,
-  "medications" : [
+  "fileId": "g1265sqd",
+  "medications": [
     {
       "name": "Spironolactone",
       "humanName": "Spironolactone",

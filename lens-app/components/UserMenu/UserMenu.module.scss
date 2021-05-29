@@ -1,0 +1,17 @@
+.userMenu {
+  color: darkgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settingsIcon {
+  height: 20px;
+  color: #777;
+  padding: 0 10px;
+}
+
+.iconContainer {
+  display: flex;
+  cursor: pointer;
+}
