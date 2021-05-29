@@ -4,6 +4,7 @@ import styles from './Header.module.scss';
 import Title from '../Title';
 import UserMenu from '../UserMenu';
 import { User } from '../../types/user';
+import Link from 'next/link';
 
 interface Props {
   user: User;
@@ -12,7 +13,9 @@ interface Props {
 export default function Header({ user }: Props): ReactElement {
   return (
     <header className={classnames(styles.header, 'container')}>
-      <Title className={styles.brand} />
+      <Link href="/">
+        <Title className={styles.brand} />
+      </Link>
       <UserMenu user={user} />
     </header>
   )

@@ -9,7 +9,7 @@ interface Props {
 export default function Title(props: Props): ReactElement {
   return (
     <h1 className={classNames(styles.title, props.className)}>
-      Lens
+      LensApp
     </h1>
   )
 }

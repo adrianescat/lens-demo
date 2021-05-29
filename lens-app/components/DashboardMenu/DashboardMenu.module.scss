@@ -1,0 +1,48 @@
+.aside {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  li {
+    font-size: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      color: #03556f;
+    }
+
+    &.disabled,
+    &.disabled:hover {
+      cursor: not-allowed;
+      color: grey;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .aside {
+    flex-direction: row;
+    width: 20%;
+    border-bottom: none;
+    border-right: 1px solid #f0f0f0;
+
+    ul {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+  }
+  }
+}
