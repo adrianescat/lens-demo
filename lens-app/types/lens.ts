@@ -4,6 +4,11 @@ export enum LensType {
   METAB_LAB_REPORT = 'metabolic_lab_report',
 }
 
+export type LabelValue = {
+  label: string,
+  value: string,
+}
+
 export type Patient = {
   dateOfBirth: string,
   emrId: string,
@@ -59,6 +64,7 @@ export type Medication = {
   weight: number,
   page: number,
   box?: BoxCoords,
+  moreInfo?: Array<LabelValue>
 }
 
 export type Transformation = {

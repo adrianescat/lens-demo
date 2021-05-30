@@ -15,6 +15,7 @@ import {
   flagActions,
 } from '../../types/lens';
 import PopoverMenu from '../PopoverMenu';
+import LensInfoGroup from './LensInfoGroup';
 
 interface Props {
   data: Lens;
@@ -152,53 +153,20 @@ export default function LensView({ data }: Props): ReactElement {
               </label>
               <div id="tab-content1" className={styles.content}>
 
-                {/* flags */}
-                {flags.length > 0 && <div className={styles.contentGroup}>
-                  <div className={styles.contentGroupTitle}>
-                    Flag
-                  </div>
-                  {flags.map((flag: Flag) => (
-                    <div
-                      key={flag.name}
-                      className={classnames(styles.contentGroupItem, activeDot === flag.name ? styles.active : '')}
-                    >
-                      <span
-                        className={styles.groupItemName}
-                        onClick={() => handleDotClick(flag.name)}
-                      >
-                        <span
-                          className={styles.delete}
-                          onClick={() => handleRemoveItem(flag.name, flags, setFlags)}
-                        >
-                          <FontAwesomeIcon className={styles.trashIcon} icon={faTrashAlt} />
-                        </span>
-                        {flag.humanName}
-                        <div className={styles.actionMenu}>
-                          <PopoverMenu
-                            list={flagActions}
-                          >
-                            <span className={styles.actionLabel}>Action</span>
-                          </PopoverMenu>
-                        </div>
-                      </span>
-                      <div className={styles.groupItemSubContent}>
-                        <div
-                          className={styles.subContentCancel}
-                          onClick={handleClearDot}
-                        >
-                          Cancel
-                        </div>
-                        <div
-                          className={styles.subContentConfirm}
-                          onClick={() => handleMoveItem(flag.name, flags, setFlags, flagsDone, setflagsDone)}
-                        >
-                          Confirm
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>}
-
+                <LensInfoGroup
+                  groupName="Flag"
+                  list={flags}
+                  listDone={flagsDone}
+                  hasActions
+                  actions={flagActions}
+                  activeDot={activeDot}
+                  listSetter={setFlags}
+                  handleClearDot={handleClearDot}
+                  listDoneSetter={setflagsDone}
+                  handleDotClick={handleDotClick}
+                  handleRemoveItem={handleRemoveItem}
+                  handleMoveItem={handleMoveItem}
+                />
               </div>
             </li>
             <li className={styles.tab}>
@@ -210,39 +178,21 @@ export default function LensView({ data }: Props): ReactElement {
                 Done
               </label>
               <div id="tab-content2" className={styles.content}>
-                {flagsDone.length > 0 && <div className={styles.contentGroup}>
-                  <div className={styles.contentGroupTitle}>
-                    Flag
-                  </div>
-                  {flagsDone.map((flag: Flag) => (
-                    <div
-                      key={flag.name}
-                      className={classnames(styles.contentGroupItem, activeDot === flag.name ? styles.active : '')}
-                    >
-                      <span
-                        className={styles.groupItemName}
-                        onClick={() => handleDotClick(flag.name)}
-                      >
-                        {flag.humanName}
-                        <div className={styles.actionMenu}>
-                          <PopoverMenu
-                            list={flagActions}
-                          >
-                            <span className={styles.actionLabel}>Action</span>
-                          </PopoverMenu>
-                        </div>
-                      </span>
-                      <div className={styles.groupItemSubContentDone}>
-                        <div
-                          className={styles.subContentRemove}
-                          onClick={() => handleMoveItem(flag.name, flagsDone, setflagsDone, flags, setFlags)}
-                        >
-                          Remove
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>}
+                <LensInfoGroup
+                  groupName="Flag"
+                  isDoneList
+                  list={flagsDone}
+                  listDone={flags}
+                  hasActions
+                  actions={flagActions}
+                  activeDot={activeDot}
+                  listSetter={setflagsDone}
+                  handleClearDot={handleClearDot}
+                  listDoneSetter={setFlags}
+                  handleDotClick={handleDotClick}
+                  handleRemoveItem={handleRemoveItem}
+                  handleMoveItem={handleMoveItem}
+                />
               </div>
             </li>
           </ul>

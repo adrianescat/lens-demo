@@ -123,7 +123,21 @@
         "b": 1107,
         "l": 20,
         "r": 375
-      }
+      },
+      "moreInfo": [
+        {
+          "label": "Dose",
+          "value": "80MG"
+        },
+        {
+          "label": "Dispense",
+          "value": "30"
+        },
+        {
+          "label": "Refill",
+          "value": "1"
+        }
+      ]
     }
   ]
 }
