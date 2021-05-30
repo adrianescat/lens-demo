@@ -5,19 +5,18 @@ import styles from './PopoverMenu.module.scss';
 interface Props {
   list: Array<any>;
   children: ReactElement;
-  isReadOnly?: boolean;
 }
 
-export default function PopoverMenu({ list, children, isReadOnly = false }: Props): ReactElement {
+export default function PopoverMenu({ list, children }: Props): ReactElement {
   return (
     <div className={styles.popoverWrapper}>
       {children}
       <div className={styles.popoverContent}>
-        <ul className={styles.popoverUl}>
+        <ul>
           {list.map((option: any) => (
-            <li className={classnames(styles.popoverLi, isReadOnly ? styles.readOnly : '')}>
-              <span>{option}</span>
-              {isReadOnly && option.value && (
+            <li className={classnames(styles.popoverLi, option.value ? styles.readOnly : '')}>
+              <span>{option.label ? option.label : option}</span>
+              {option.value && (
                 <span className={styles.value}>{option.value}</span>
               )}
             </li>

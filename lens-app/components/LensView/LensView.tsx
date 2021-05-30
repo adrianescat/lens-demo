@@ -29,6 +29,9 @@ export default function LensView({ data }: Props): ReactElement {
   const [allergies, setAllergies] = useState<[] | Array<Allergy>>(data.allergies.length > 0 ? data.allergies : []);
   const [medications, setMedication] = useState<[] | Array<Medication>>(data.medications.length > 0 ? data.medications : []);
   const [flagsDone, setflagsDone] = useState<[] | Array<Flag>>([]);
+  const [problemsDone, setProblemsDone] = useState<[] | Array<Flag>>([]);
+  const [allergiesDone, setAllergiesDone] = useState<[] | Array<Flag>>([]);
+  const [medicationsDone, setMedicationsDone] = useState<[] | Array<Flag>>([]);
 
   const hasFiles = data.files.length > 0;
 
@@ -167,6 +170,46 @@ export default function LensView({ data }: Props): ReactElement {
                   handleRemoveItem={handleRemoveItem}
                   handleMoveItem={handleMoveItem}
                 />
+
+                <LensInfoGroup
+                  groupName="Problem"
+                  list={problems}
+                  listDone={problemsDone}
+                  activeDot={activeDot}
+                  listSetter={setProblems}
+                  handleClearDot={handleClearDot}
+                  listDoneSetter={setProblemsDone}
+                  handleDotClick={handleDotClick}
+                  handleRemoveItem={handleRemoveItem}
+                  handleMoveItem={handleMoveItem}
+                />
+
+                <LensInfoGroup
+                  groupName="Allergy"
+                  list={allergies}
+                  listDone={allergiesDone}
+                  activeDot={activeDot}
+                  listSetter={setAllergies}
+                  handleClearDot={handleClearDot}
+                  listDoneSetter={setAllergiesDone}
+                  handleDotClick={handleDotClick}
+                  handleRemoveItem={handleRemoveItem}
+                  handleMoveItem={handleMoveItem}
+                />
+
+                <LensInfoGroup
+                  groupName="Medication"
+                  list={medications}
+                  listDone={medicationsDone}
+                  hasActions
+                  activeDot={activeDot}
+                  listSetter={setMedication}
+                  handleClearDot={handleClearDot}
+                  listDoneSetter={setMedicationsDone}
+                  handleDotClick={handleDotClick}
+                  handleRemoveItem={handleRemoveItem}
+                  handleMoveItem={handleMoveItem}
+                />
               </div>
             </li>
             <li className={styles.tab}>
@@ -193,10 +236,52 @@ export default function LensView({ data }: Props): ReactElement {
                   handleRemoveItem={handleRemoveItem}
                   handleMoveItem={handleMoveItem}
                 />
+
+                <LensInfoGroup
+                  groupName="Problem"
+                  isDoneList
+                  list={problemsDone}
+                  listDone={problems}
+                  activeDot={activeDot}
+                  listSetter={setProblemsDone}
+                  handleClearDot={handleClearDot}
+                  listDoneSetter={setProblems}
+                  handleDotClick={handleDotClick}
+                  handleRemoveItem={handleRemoveItem}
+                  handleMoveItem={handleMoveItem}
+                />
+
+                <LensInfoGroup
+                  groupName="Allergy"
+                  isDoneList
+                  list={allergiesDone}
+                  listDone={allergies}
+                  activeDot={activeDot}
+                  listSetter={setAllergiesDone}
+                  handleClearDot={handleClearDot}
+                  listDoneSetter={setAllergies}
+                  handleDotClick={handleDotClick}
+                  handleRemoveItem={handleRemoveItem}
+                  handleMoveItem={handleMoveItem}
+                />
+
+                <LensInfoGroup
+                  groupName="Medication"
+                  isDoneList
+                  hasActions
+                  list={medicationsDone}
+                  listDone={medications}
+                  activeDot={activeDot}
+                  listSetter={setMedicationsDone}
+                  handleClearDot={handleClearDot}
+                  listDoneSetter={setMedication}
+                  handleDotClick={handleDotClick}
+                  handleRemoveItem={handleRemoveItem}
+                  handleMoveItem={handleMoveItem}
+                />
               </div>
             </li>
           </ul>
-
         </div>
       </aside>
     </div>

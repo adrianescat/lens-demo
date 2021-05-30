@@ -36,11 +36,11 @@
       background-color: #f6f6f6;
     }
 
-    &.isReadOnly {
+    &.readOnly {
       color: #000;
     }
 
-    &.isReadOnly:hover {
+    &.readOnly:hover {
       background-color: #fff;
 
       .value {

@@ -18,8 +18,8 @@ interface Props {
   groupName: string;
   list: Array<any>;
   listDone: Array<Flag | Problem | Allergy | Medication>;
-  actions: Array<any>
   activeDot: string,
+  actions?: Array<any>
   hasActions?: boolean;
   isDoneList?: boolean;
   listSetter: Dispatch<SetStateAction<[] | Flag[]>>;
