@@ -27,7 +27,7 @@
   }
 
   .actionMenu {
-    float: right;
+    display: none;
   }
 
   .actionLabel {
@@ -48,6 +48,11 @@
   max-height: 15rem;
   z-index: 2;
   margin: 0 auto;
+
+  .actionMenu {
+    display: block;
+    float: right;
+  }
 
   .groupItemSubContent,
   .groupItemSubContentDone {
