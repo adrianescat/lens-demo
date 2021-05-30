@@ -13,11 +13,9 @@ export default function Dashboard({ data }: ServerSideProps): JSX.Element {
   }
 
   return (
-    <div className="container" >
-      <LensView
-        data={data}
-      />
-    </div>
+    <LensView
+      data={data}
+    />
   )
 }
 
@@ -25,11 +23,12 @@ export default function Dashboard({ data }: ServerSideProps): JSX.Element {
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async (context) => {
   const res = await fetch(`http://localhost:3000/api/lensById/${context.query.id}`);
   const data = await res.json();
+  const name = data.lens ? `Lens: ${data.lens.id}` : 'Lens 404';
 
   return {
     props: {
       pageTag: 'view',
-      name: 'Lens: Dashboard',
+      name,
       data: data.lens ? data.lens : null
     }
   }

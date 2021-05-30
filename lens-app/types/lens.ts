@@ -66,6 +66,13 @@ export type Transformation = {
   degrees: number,
 }
 
+export type File = {
+  order: number,
+  id: string,
+  width: number,
+  height: number,
+}
+
 export type Lens = {
   id: string,
   patient: Patient,
@@ -74,7 +81,7 @@ export type Lens = {
   summaryLabel: LensType,
   summaryScore: number,
   urgent: boolean,
-  fileId: string,
+  files?: Array<File>,
   lastUpdated: string,
   flags?: Array<Flag>,
   problems?: Array<Problem>,
@@ -86,3 +93,5 @@ export type Lens = {
 export type LensList = {
   lens: Array<Lens>;
 }
+
+export const flagActions = ['Call', 'Message', 'Calendar'];
