@@ -4,6 +4,7 @@ import styles from './Dashboard.module.scss';
 import DashboardMenu from '../DashboardMenu';
 import UnderConstruction from '../UnderConstruction';
 import LensList from '../LensList';
+import PatientsSearch from '../PatientsSearch';
 
 interface Props {
   lens: Array<Lens>
@@ -22,7 +23,7 @@ export default function Dashboard({ lens }: Props): ReactElement {
     <section className={styles.dashboard}>
       <DashboardMenu setCategory={setCategory} />
       { category === DashboardCategories.LENSLIST && (<LensList lens={lens} />)}
-      { category === DashboardCategories.PATIENTS && (<UnderConstruction />)}
+      { category === DashboardCategories.PATIENTS && (<PatientsSearch />)}
       { category === DashboardCategories.HOSPITALS && (<UnderConstruction />)}
     </section>
   )

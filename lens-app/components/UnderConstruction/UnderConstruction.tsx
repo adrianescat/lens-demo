@@ -7,7 +7,7 @@ export default function UnderConstruction(): ReactElement {
     <div className={styles.underConstruction}>
       <Image
         src="/img/under_construction.svg"
-        alt="Add Lens"
+        alt="Under construction"
         width={300}
         height={300}
       />
