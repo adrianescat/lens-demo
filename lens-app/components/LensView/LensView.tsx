@@ -1,8 +1,6 @@
 import React, { useState, ReactElement } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classnames from 'classnames';
 import styles from './LensView.module.scss';
 import {
@@ -14,8 +12,8 @@ import {
   Medication,
   flagActions,
 } from '../../types/lens';
-import PopoverMenu from '../PopoverMenu';
 import LensInfoGroup from './LensInfoGroup';
+import Files from './Files';
 
 interface Props {
   data: Lens;
@@ -33,7 +31,7 @@ export default function LensView({ data }: Props): ReactElement {
   const [allergiesDone, setAllergiesDone] = useState<[] | Array<Flag>>([]);
   const [medicationsDone, setMedicationsDone] = useState<[] | Array<Flag>>([]);
 
-  const hasFiles = data.files.length > 0;
+  // const hasFiles = data.files.length > 0;
 
   function handleDotClick(name: string): void {
     setActiveDot(name);
@@ -64,83 +62,16 @@ export default function LensView({ data }: Props): ReactElement {
 
   return (
     <div className={styles.lensView}>
-      <section className={styles.fileSection}>
-        <div className={styles.header}>
-          <button className={styles.doneButton}>
-            <Link href="/dashboard">
-              Done
-            </Link>
-          </button>
-        </div>
-        {hasFiles && <div className={classnames(styles.files, hasFiles ? styles.hasFiles : '')}>
-          {data.files.map((file: File, index: number) => (
-            <div className={styles.file} key={file.id}>
-              <Image
-                src={`/img/${data.id}_${index}.png`}
-                alt="file"
-                width={file.width}
-                height={file.height}
-              />
-
-              {/* flags */}
-              {data.flags.filter((flag: Flag) => flag.page === index).map((flag: Flag) => (
-                <span
-                  key={flag.name}
-                  data-info={flag.name}
-                  className={classnames(styles.dot, flag.name === activeDot ? styles.active : '')}
-                  style={{
-                    top: `${flag.box.t}%`,
-                    left: `${flag.box.l}%`,
-                  }}
-                  onClick={() => handleDotClick(flag.name)}
-                />
-              ))}
-
-              {/* problems */}
-              {data.problems.filter((problem: Problem) => problem.page === index).map((problem: Problem) => (
-                <span
-                  key={problem.name}
-                  data-info={problem.name}
-                  className={classnames(styles.dot, problem.name === activeDot ? styles.active : '')}
-                  style={{
-                    top: `${problem.box.t}%`,
-                    left: `${problem.box.l}%`,
-                  }}
-                  onClick={() => handleDotClick(problem.name)}
-                />
-              ))}
-
-              {/* allergies */}
-              {data.allergies.filter((allergy: Allergy) => allergy.page === index).map((allergy: Allergy) => (
-                <span
-                  key={allergy.name}
-                  data-info={allergy.name}
-                  className={classnames(styles.dot, allergy.name === activeDot ? styles.active : '')}
-                  style={{
-                    top: `${allergy.box.t}%`,
-                    left: `${allergy.box.l}%`,
-                  }}
-                  onClick={() => handleDotClick(allergy.name)}
-                />
-              ))}
-
-              {/* medications */}
-              {data.medications.filter((medication: Medication) => medication.page === index).map((medication: Medication) => (
-                <span
-                  key={medication.name}
-                  data-info={medication.name}
-                  className={classnames(styles.dot, medication.name === activeDot ? styles.active : '')}
-                  style={{
-                    top: `${medication.box.t}%`,
-                    left: `${medication.box.l}%`,
-                  }}
-                  onClick={() => handleDotClick(medication.name)}
-                />
-              ))}
-            </div>
-          ))}
-        </div>}
-      </section>
+      <Files
+        lensId={data.id}
+        activeDot={activeDot}
+        files={data.files}
+        flags={data.flags}
+        problems={data.problems}
+        allergies={data.allergies}
+        medications={data.medications}
+        handleDotClick={handleDotClick}
+      />
       <aside className={styles.sidebar}>
         <div className="navbar"></div>
         <div className={styles.heading}>Outline</div>
