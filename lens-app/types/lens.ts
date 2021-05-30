@@ -67,6 +67,7 @@ export type Transformation = {
 }
 
 export type Lens = {
+  id: string,
   patient: Patient,
   patientScore: number,
   summary: string,

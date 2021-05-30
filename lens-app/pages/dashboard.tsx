@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { GetServerSideProps } from 'next';
 import { LensList } from '../types/lens';
 import { default as DashboardComponent } from '../components/Dashboard';

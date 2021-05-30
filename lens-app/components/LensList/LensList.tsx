@@ -25,7 +25,7 @@ export default function LensList({ lens }: Props): ReactElement {
       </div>
       <div role="List of lens" aria-label="List of lens" className={styles.lensList}>
         {lens.map((lens: Lens, index: Number) => (
-          <LensBox key={`${lens.patient}-${lens.fileId}`} data={lens} />
+          <LensBox key={lens.id} data={lens} />
         ))}
       </div>
     </div>

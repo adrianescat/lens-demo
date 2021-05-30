@@ -17,7 +17,7 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       </Head>
 
-      <Header user={user} />
+      {pageProps.pageTag !== 'view' && <Header user={user} />}
       <Component {...pageProps} />
     </Layout>
   )
