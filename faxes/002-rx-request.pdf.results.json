@@ -3,7 +3,7 @@
   "documentTransformations": [
     {
       "op": "rotate",
-      "degrees": 185
+      "degrees": 180
     }
   ],
   "patient": {
@@ -31,11 +31,19 @@
       "weight": 0.9,
       "page": 0,
       "box": {
-        "t": 945,
+        "t": 57,
         "b": 1020,
-        "l": 480,
+        "l": 24,
         "r": 802
       }
+    }
+  ],
+  "files": [
+    {
+      "order": 0,
+      "id": "5221298321783_0",
+      "width": 1700,
+      "height": 2200
     }
   ]
 }

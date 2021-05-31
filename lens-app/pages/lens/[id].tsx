@@ -7,7 +7,7 @@ interface ServerSideProps {
   data: Lens;
 }
 
-export default function Dashboard({ data }: ServerSideProps): JSX.Element {
+export default function LensById({ data }: ServerSideProps): JSX.Element {
   if (!data) {
     return (<div>Lens not found</div>)
   }

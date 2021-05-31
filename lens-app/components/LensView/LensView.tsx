@@ -1,7 +1,4 @@
 import React, { useState, ReactElement } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import classnames from 'classnames';
 import styles from './LensView.module.scss';
 import {
   Lens,
@@ -22,10 +19,10 @@ interface Props {
 export default function LensView({ data }: Props): ReactElement {
   const [activeDot, setActiveDot] = useState('');
   const [selectedTabId, setSelectedTabId] = useState('tab1');
-  const [flags, setFlags] = useState<[] | Array<Flag>>(data.flags.length > 0 ? data.flags : []);
-  const [problems, setProblems] = useState<[] | Array<Problem>>(data.problems.length > 0 ? data.problems : []);
-  const [allergies, setAllergies] = useState<[] | Array<Allergy>>(data.allergies.length > 0 ? data.allergies : []);
-  const [medications, setMedication] = useState<[] | Array<Medication>>(data.medications.length > 0 ? data.medications : []);
+  const [flags, setFlags] = useState<[] | Array<Flag>>(data.flags?.length > 0 ? data.flags : []);
+  const [problems, setProblems] = useState<[] | Array<Problem>>(data.problems?.length > 0 ? data.problems : []);
+  const [allergies, setAllergies] = useState<[] | Array<Allergy>>(data.allergies?.length > 0 ? data.allergies : []);
+  const [medications, setMedication] = useState<[] | Array<Medication>>(data.medications?.length > 0 ? data.medications : []);
   const [flagsDone, setflagsDone] = useState<[] | Array<Flag>>([]);
   const [problemsDone, setProblemsDone] = useState<[] | Array<Flag>>([]);
   const [allergiesDone, setAllergiesDone] = useState<[] | Array<Flag>>([]);
@@ -64,6 +61,7 @@ export default function LensView({ data }: Props): ReactElement {
     <div className={styles.lensView}>
       <Files
         lensId={data.id}
+        transformations={data?.documentTransformations}
         activeDot={activeDot}
         files={data.files}
         flags={data.flags}

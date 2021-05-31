@@ -13,8 +13,10 @@ interface Props {
 export default function Header({ user }: Props): ReactElement {
   return (
     <header className={classnames(styles.header, 'container')}>
-      <Link passHref href="/">
-        <Title className={styles.brand} />
+      <Link href="/">
+        <>
+          <Title className={styles.brand} />
+        </>
       </Link>
       <UserMenu user={user} />
     </header>

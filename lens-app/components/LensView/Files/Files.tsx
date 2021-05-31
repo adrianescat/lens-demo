@@ -12,11 +12,13 @@ import {
   Problem,
   Allergy,
   Medication,
+  Transformation,
 } from '../../../types/lens';
 
 interface Props {
   lensId: string;
   activeDot: string;
+  transformations?: Array<Transformation>;
   files: Array<File>;
   flags: Array<Flag>;
   problems: Array<Problem>;
@@ -33,6 +35,7 @@ export default function Files({
   problems,
   allergies,
   medications,
+  transformations,
   handleDotClick,
 }: Props): ReactElement {
   const [flagOnboarding, setFlagOnboarding] = useState(false);
@@ -82,21 +85,28 @@ export default function Files({
   ]);
 
   useEffect(() => {
-    if (!!flags.filter((flag: Flag) => flag.name === activeDot).length && !onboardingsDone['flag']) {
+    if (!!flags?.filter((flag: Flag) => flag.name === activeDot).length && !onboardingsDone['flag']) {
       setFlagOnboarding(true);
     }
 
-    if (!!problems.filter((problem: Problem) => problem.name === activeDot).length && !onboardingsDone['problem']) {
+    if (!!problems?.filter((problem: Problem) => problem.name === activeDot).length && !onboardingsDone['problem']) {
       setProblemOnboarding(true);
     }
 
-    if (!!medications.filter((medication: Medication) => medication.name === activeDot).length && !onboardingsDone['medication']) {
+    if (!!medications?.filter((medication: Medication) => medication.name === activeDot).length && !onboardingsDone['medication']) {
       setMedicationOnboarding(true);
     }
   }, [activeDot, onboardingsDone])
 
-  const hasFiles = files.length > 0;
+  const hasFiles = files?.length > 0;
   const isOnboardingActive = flagOnboarding || problemOnboarding || medicationOnboarding;
+
+  const fileStyles = {};
+  if (!!transformations?.length) {
+    transformations.map((t: Transformation) => {
+      fileStyles['transform'] = `${t.op}(${t.degrees}deg)`;
+    })
+  }
 
   return (
     <section className={styles.fileSection}>
@@ -108,8 +118,12 @@ export default function Files({
         </button>
       </div>
       {hasFiles && <div className={classnames(styles.files, hasFiles ? styles.hasFiles : '')}>
-        {files.map((file: File, index: number) => (
-          <div className={classnames(styles.file, isOnboardingActive ? styles.isOnboardingActive : '')} key={file.id}>
+        {files?.map((file: File, index: number) => (
+          <div
+            className={classnames(styles.file, isOnboardingActive ? styles.isOnboardingActive : '')}
+            key={file.id}
+            style={fileStyles}
+          >
             <Image
               src={`/img/${lensId}_${index}.png`}
               alt="file"
@@ -118,7 +132,7 @@ export default function Files({
             />
 
             {/* flags */}
-            {flags.filter((flag: Flag) => flag.page === index).map((flag: Flag) => (
+            {flags?.filter((flag: Flag) => flag.page === index).map((flag: Flag) => (
               <Dot
                 key={flag.name}
                 name={flag.name}
@@ -130,7 +144,7 @@ export default function Files({
             ))}
 
             {/* problems */}
-            {problems.filter((problem: Problem) => problem.page === index).map((problem: Problem) => (
+            {problems?.filter((problem: Problem) => problem.page === index).map((problem: Problem) => (
               <Dot
                 key={problem.name}
                 name={problem.name}
@@ -142,7 +156,7 @@ export default function Files({
             ))}
 
             {/* allergies */}
-            {allergies.filter((allergy: Allergy) => allergy.page === index).map((allergy: Allergy) => (
+            {allergies?.filter((allergy: Allergy) => allergy.page === index).map((allergy: Allergy) => (
               <Dot
                 key={allergy.name}
                 name={allergy.name}
@@ -154,7 +168,7 @@ export default function Files({
             ))}
 
             {/* medications */}
-            {medications.filter((medication: Medication) => medication.page === index).map((medication: Medication) => (
+            {medications?.filter((medication: Medication) => medication.page === index).map((medication: Medication) => (
               <Dot
                 key={medication.name}
                 name={medication.name}
@@ -167,21 +181,21 @@ export default function Files({
           </div>
         ))}
       </div>}
-      {flags.length > 0 && (
+      {flags?.length > 0 && (
         <Onboarding
           isActive={flagOnboarding}
           title="Flag"
           description="Lens reads the patients existing medical records, and flags any mention of severe conditions."
         />
       )}
-      {problems.length > 0 && (
+      {problems?.length > 0 && (
         <Onboarding
           isActive={problemOnboarding}
           title="Problem"
           description="Lens can recognize problems that are not included in the existing medical records."
         />
       )}
-      {medications.length > 0 && (
+      {medications?.length > 0 && (
         <Onboarding
           isActive={medicationOnboarding}
           title="Medications"

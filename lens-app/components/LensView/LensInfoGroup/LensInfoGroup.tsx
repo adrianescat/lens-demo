@@ -48,7 +48,7 @@ export default function LensInfoGroup({
   if (list.length === 0) {
     return null;
   }
-
+  console.log(groupName)
   return (
     <div className={styles.contentGroup}>
       <div className={styles.contentGroupTitle}>
@@ -70,7 +70,7 @@ export default function LensInfoGroup({
               <FontAwesomeIcon className={styles.trashIcon} icon={faTrashAlt} />
             </span>}
             {item.humanName}
-            {hasActions && <div className={styles.actionMenu}>
+            {hasActions && (item.moreInfo || actions) && <div className={styles.actionMenu}>
               <PopoverMenu
                 list={item.moreInfo ? item.moreInfo : actions}
               >
