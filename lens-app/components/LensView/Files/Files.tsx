@@ -1,8 +1,9 @@
-import React, { ReactElement } from 'react'
+import React, { useState, useEffect, useCallback, ReactElement } from 'react'
 import classnames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Files.module.scss';
+import Onboarding from '../Onboarding';
 
 import {
   File,
@@ -33,7 +34,68 @@ export default function Files({
   medications,
   handleDotClick,
 }: Props): ReactElement {
+  const [flagOnboarding, setFlagOnboarding] = useState(false);
+  const [problemOnboarding, setProblemOnboarding] = useState(false);
+  const [medicationOnboarding, setMedicationOnboarding] = useState(false);
+  const [onboardingsDone, setOnboardingsDone] = useState({ flag: false, problem: false, medication: false });
+
+  const turnOffOnboarding = useCallback((trigger, flagName, setter) => {
+    if (trigger) {
+      setter(false);
+      setOnboardingsDone({ ...onboardingsDone, [flagName]: true });
+    }
+  }, [onboardingsDone]);
+
+  const handleDotClickWithOnboarding = useCallback((name: string, triggerName: string, setter) => {
+    handleDotClick(name);
+
+    if (!onboardingsDone[triggerName]) {
+      setter(true);
+    }
+  }, [onboardingsDone]);
+
+  const handleRandomClick = useCallback(() => {
+    turnOffOnboarding(flagOnboarding, 'flag', setFlagOnboarding);
+    turnOffOnboarding(problemOnboarding, 'problem', setProblemOnboarding);
+    turnOffOnboarding(medicationOnboarding, 'medication', setMedicationOnboarding);
+  }, [flagOnboarding, problemOnboarding, medicationOnboarding]);
+
+  useEffect(() => {
+    document.body.addEventListener('click', handleRandomClick, true);
+
+    if (onboardingsDone['flag'] && onboardingsDone['problem'] && onboardingsDone['medication']) {
+      document.body.removeEventListener('click', handleRandomClick, true);
+    }
+
+    return () => {
+      document.body.removeEventListener('click', handleRandomClick, true);
+    }
+  }, [
+    handleRandomClick,
+    handleDotClickWithOnboarding,
+    turnOffOnboarding,
+    flagOnboarding,
+    problemOnboarding,
+    medicationOnboarding,
+    onboardingsDone
+  ]);
+
+  useEffect(() => {
+    if (!!flags.filter((flag: Flag) => flag.name === activeDot).length && !onboardingsDone['flag']) {
+      setFlagOnboarding(true);
+    }
+
+    if (!!problems.filter((problem: Problem) => problem.name === activeDot).length && !onboardingsDone['problem']) {
+      setProblemOnboarding(true);
+    }
+
+    if (!!medications.filter((medication: Medication) => medication.name === activeDot).length && !onboardingsDone['medication']) {
+      setMedicationOnboarding(true);
+    }
+  }, [activeDot, onboardingsDone])
+
   const hasFiles = files.length > 0;
+  const isOnboardingActive = flagOnboarding || problemOnboarding || medicationOnboarding;
 
   return (
     <section className={styles.fileSection}>
@@ -46,7 +108,7 @@ export default function Files({
       </div>
       {hasFiles && <div className={classnames(styles.files, hasFiles ? styles.hasFiles : '')}>
         {files.map((file: File, index: number) => (
-          <div className={styles.file} key={file.id}>
+          <div className={classnames(styles.file, isOnboardingActive ? styles.isOnboardingActive : '')} key={file.id}>
             <Image
               src={`/img/${lensId}_${index}.png`}
               alt="file"
@@ -64,7 +126,7 @@ export default function Files({
                   top: `${flag.box.t}%`,
                   left: `${flag.box.l}%`,
                 }}
-                onClick={() => handleDotClick(flag.name)}
+                onClick={() => handleDotClickWithOnboarding(flag.name, 'flag', setFlagOnboarding)}
               />
             ))}
 
@@ -78,7 +140,7 @@ export default function Files({
                   top: `${problem.box.t}%`,
                   left: `${problem.box.l}%`,
                 }}
-                onClick={() => handleDotClick(problem.name)}
+                onClick={() => handleDotClickWithOnboarding(problem.name, 'problem', setProblemOnboarding)}
               />
             ))}
 
@@ -106,12 +168,33 @@ export default function Files({
                   top: `${medication.box.t}%`,
                   left: `${medication.box.l}%`,
                 }}
-                onClick={() => handleDotClick(medication.name)}
+                onClick={() => handleDotClickWithOnboarding(medication.name, 'medication', setMedicationOnboarding)}
               />
             ))}
           </div>
         ))}
       </div>}
+      {flags.length > 0 && (
+        <Onboarding
+          isActive={flagOnboarding}
+          title="Flag"
+          description="Lens reads the patients existing medical records, and flags any mention of severe conditions."
+        />
+      )}
+      {problems.length > 0 && (
+        <Onboarding
+          isActive={problemOnboarding}
+          title="Problem"
+          description="Lens can recognize problems that are not included in the existing medical records."
+        />
+      )}
+      {medications.length > 0 && (
+        <Onboarding
+          isActive={medicationOnboarding}
+          title="Medications"
+          description="Lens can recognize medications that have not been added to existing medical records."
+        />
+      )}
     </section>
   )
 }
