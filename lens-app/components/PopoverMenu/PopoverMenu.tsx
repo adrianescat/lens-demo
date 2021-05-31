@@ -13,8 +13,8 @@ export default function PopoverMenu({ list, children }: Props): ReactElement {
       {children}
       <div className={styles.popoverContent}>
         <ul>
-          {list.map((option: any) => (
-            <li className={classnames(styles.popoverLi, option.value ? styles.readOnly : '')}>
+          {list.map((option: any, index) => (
+            <li key={`option-${index}`} className={classnames(styles.popoverLi, option.value ? styles.readOnly : '')}>
               <span>{option.label ? option.label : option}</span>
               {option.value && (
                 <span className={styles.value}>{option.value}</span>

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Files.module.scss';
 import Onboarding from '../Onboarding';
+import Dot from '../Dot';
 
 import {
   File,
@@ -118,56 +119,48 @@ export default function Files({
 
             {/* flags */}
             {flags.filter((flag: Flag) => flag.page === index).map((flag: Flag) => (
-              <span
+              <Dot
                 key={flag.name}
-                data-info={flag.name}
-                className={classnames(styles.dot, flag.name === activeDot ? styles.active : '')}
-                style={{
-                  top: `${flag.box.t}%`,
-                  left: `${flag.box.l}%`,
-                }}
+                name={flag.name}
+                isActive={flag.name === activeDot}
+                top={flag.box.t}
+                left={flag.box.l}
                 onClick={() => handleDotClickWithOnboarding(flag.name, 'flag', setFlagOnboarding)}
               />
             ))}
 
             {/* problems */}
             {problems.filter((problem: Problem) => problem.page === index).map((problem: Problem) => (
-              <span
+              <Dot
                 key={problem.name}
-                data-info={problem.name}
-                className={classnames(styles.dot, problem.name === activeDot ? styles.active : '')}
-                style={{
-                  top: `${problem.box.t}%`,
-                  left: `${problem.box.l}%`,
-                }}
+                name={problem.name}
+                isActive={problem.name === activeDot}
+                top={problem.box.t}
+                left={problem.box.l}
                 onClick={() => handleDotClickWithOnboarding(problem.name, 'problem', setProblemOnboarding)}
               />
             ))}
 
             {/* allergies */}
             {allergies.filter((allergy: Allergy) => allergy.page === index).map((allergy: Allergy) => (
-              <span
+              <Dot
                 key={allergy.name}
-                data-info={allergy.name}
-                className={classnames(styles.dot, allergy.name === activeDot ? styles.active : '')}
-                style={{
-                  top: `${allergy.box.t}%`,
-                  left: `${allergy.box.l}%`,
-                }}
+                name={allergy.name}
+                isActive={allergy.name === activeDot}
+                top={allergy.box.t}
+                left={allergy.box.l}
                 onClick={() => handleDotClick(allergy.name)}
               />
             ))}
 
             {/* medications */}
             {medications.filter((medication: Medication) => medication.page === index).map((medication: Medication) => (
-              <span
+              <Dot
                 key={medication.name}
-                data-info={medication.name}
-                className={classnames(styles.dot, medication.name === activeDot ? styles.active : '')}
-                style={{
-                  top: `${medication.box.t}%`,
-                  left: `${medication.box.l}%`,
-                }}
+                name={medication.name}
+                isActive={medication.name === activeDot}
+                top={medication.box.t}
+                left={medication.box.l}
                 onClick={() => handleDotClickWithOnboarding(medication.name, 'medication', setMedicationOnboarding)}
               />
             ))}
