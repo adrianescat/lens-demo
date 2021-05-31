@@ -1,3 +1,4 @@
+import React from 'react';
 import { GetServerSideProps } from 'next';
 import LensView from '../../components/LensView';
 import { Lens } from '../../types/lens';

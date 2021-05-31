@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import classNames from 'classnames';
 import styles from './Title.module.scss'
 
-interface Props {
+export interface Props {
   className?: string;
 }
 

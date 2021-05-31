@@ -1,3 +1,4 @@
+import React from 'react';
 import { GetServerSideProps } from 'next';
 import { LensList } from '../types/lens';
 import { default as DashboardComponent } from '../components/Dashboard';

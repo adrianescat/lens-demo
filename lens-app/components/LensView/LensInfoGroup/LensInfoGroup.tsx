@@ -48,7 +48,7 @@ export default function LensInfoGroup({
   if (list.length === 0) {
     return null;
   }
-  console.log(groupName)
+
   return (
     <div className={styles.contentGroup}>
       <div className={styles.contentGroupTitle}>
