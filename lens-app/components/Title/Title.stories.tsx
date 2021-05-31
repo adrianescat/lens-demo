@@ -1,5 +1,5 @@
 import { Story } from '@storybook/react';
-import Title, { Props } from '../Title';
+import Title, { Props } from './Title';
 
 export default {
   title: 'Title',

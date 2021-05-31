@@ -12,7 +12,7 @@ const iconMap = {
 }
 
 
-interface Props {
+export interface Props {
   label: string;
   className?: string;
   title: string;

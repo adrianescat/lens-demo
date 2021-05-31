@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 import styles from './DashboardMenu.module.scss';
 import { DashboardCategories } from '../Dashboard/Dashboard';
 
-interface Props {
+export interface Props {
   setCategory: (categoryName: DashboardCategories) => void;
 }
 

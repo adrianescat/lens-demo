@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshots 1`] = `
+<div
+  className="popoverWrapper"
+>
+  <div>
+    Test
+  </div>
+  <div
+    className="popoverContent"
+  >
+    <ul>
+      <li
+        className="popoverLi"
+        key="option-0"
+      >
+        <span>
+          calendar
+        </span>
+      </li>
+      <li
+        className="popoverLi"
+        key="option-1"
+      >
+        <span>
+          email
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`when is read-only mode should match snapshots 1`] = `
+<div
+  className="popoverWrapper"
+>
+  <div>
+    Test
+  </div>
+  <div
+    className="popoverContent"
+  >
+    <ul>
+      <li
+        className="popoverLi readOnly"
+        key="option-0"
+      >
+        <span>
+          <Component />
+        </span>
+        <span
+          className="value"
+        >
+          1
+        </span>
+      </li>
+      <li
+        className="popoverLi readOnly"
+        key="option-1"
+      >
+        <span>
+          <Component />
+        </span>
+        <span
+          className="value"
+        >
+          1
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

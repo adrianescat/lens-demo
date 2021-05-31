@@ -12,7 +12,7 @@ import {
 import LensInfoGroup from './LensInfoGroup';
 import Files from './Files';
 
-interface Props {
+export interface Props {
   data: Lens;
 }
 

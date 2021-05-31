@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshots 1`] = `
+<div
+  className="onboarding"
+>
+  <h3>
+    title
+  </h3>
+  <p>
+    description
+  </p>
+</div>
+`;
+
+exports[`when is active should match snapshots 1`] = `
+<div
+  className="onboarding active"
+>
+  <h3>
+    title
+  </h3>
+  <p>
+    description
+  </p>
+</div>
+`;

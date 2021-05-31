@@ -2,7 +2,7 @@ import React, { useRef, useEffect, ReactElement } from 'react'
 import classnames from 'classnames';
 import styles from './Dot.module.scss';
 
-interface Props {
+export interface Props {
   name: string;
   isActive: boolean;
   top: number;

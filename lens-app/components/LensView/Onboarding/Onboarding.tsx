@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 import classnames from 'classnames';
 import styles from './Onboarding.module.scss';
 
-interface Props {
+export interface Props {
   isActive?: boolean;
   title: string;
   description: string;

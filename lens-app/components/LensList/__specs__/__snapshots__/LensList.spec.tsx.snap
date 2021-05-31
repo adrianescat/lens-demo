@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshots 1`] = `
+<div
+  className="lensListContainer"
+>
+  <div
+    className="lensListFilters"
+  >
+    <div
+      className="filtersPills"
+    >
+      <div>
+        1
+         results
+      </div>
+    </div>
+    <div
+      aria-label="Filter"
+      className="filtersOptions"
+      role="Filter"
+    >
+      <span>
+        Filter
+      </span>
+      <span>
+        <FontAwesomeIcon
+          border={false}
+          className="filterIcon"
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                512,
+                512,
+                Array [],
+                "f1de",
+                "M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z",
+              ],
+              "iconName": "sliders-h",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          swapOpacity={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />
+      </span>
+    </div>
+  </div>
+  <div
+    aria-label="List of lens"
+    className="lensList"
+    role="List of lens"
+  >
+    <LensBox
+      data={
+        Object {
+          "files": Array [
+            Object {
+              "height": 2200,
+              "id": "5221291239183_0",
+              "order": 0,
+              "width": 1700,
+            },
+          ],
+          "id": "5221291239183",
+          "lastUpdated": "2020-03-12T00:00:00",
+          "patient": Object {
+            "dateOfBirth": "1940-06-12T00:00:00",
+            "emrId": "MT00034",
+            "firstName": "Michael",
+            "homePhone": "650-477-4676",
+            "lastName": "Thompson",
+            "middleName": "B",
+            "mobilePhone": "",
+            "workPhone": "",
+          },
+          "patientScore": 70.97112000000001,
+          "summary": "Metabolic Lab Report",
+          "summaryLabel": "metabolic_lab_report",
+          "summaryScore": 1.3,
+          "urgent": false,
+        }
+      }
+      key="5221291239183"
+    />
+  </div>
+</div>
+`;

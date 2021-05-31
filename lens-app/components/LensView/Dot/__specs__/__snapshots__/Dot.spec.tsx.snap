@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshots 1`] = `
+<span
+  className="dot"
+  data-info="dot"
+  key="dot"
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "left": "90%",
+      "top": "90%",
+    }
+  }
+/>
+`;
+
+exports[`when is active should match snapshots 1`] = `
+<span
+  className="dot active"
+  data-info="dot"
+  key="dot"
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "left": "20%",
+      "top": "90%",
+    }
+  }
+/>
+`;

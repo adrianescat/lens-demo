@@ -6,7 +6,7 @@ import UserMenu from '../UserMenu';
 import { User } from '../../types/user';
 import Link from 'next/link';
 
-interface Props {
+export interface Props {
   user: User;
 }
 

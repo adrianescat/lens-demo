@@ -6,7 +6,7 @@ import UnderConstruction from '../UnderConstruction';
 import LensList from '../LensList';
 import PatientsSearch from '../PatientsSearch';
 
-interface Props {
+export interface Props {
   lens: Array<Lens>
 }
 

@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 import classnames from 'classnames';
 import styles from './PopoverMenu.module.scss';
 
-interface Props {
+export interface Props {
   list: Array<any>;
   children: ReactElement;
 }

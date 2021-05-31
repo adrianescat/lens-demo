@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './UserMenu.module.scss';
 import { User } from '../../types/user';
 
-interface Props {
+export interface Props {
   user: User;
 }
 

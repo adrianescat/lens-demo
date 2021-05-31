@@ -7,7 +7,7 @@ import { Lens } from '../../types/lens';
 import styles from './LensBox.module.scss';
 import LensIcon from '../LensIcon';
 
-interface Props {
+export interface Props {
   data: Lens;
 }
 

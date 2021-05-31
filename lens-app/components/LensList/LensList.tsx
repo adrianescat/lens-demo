@@ -5,7 +5,7 @@ import { Lens } from '../../types/lens';
 import styles from './LensList.module.scss';
 import LensBox from '../LensBox';
 
-interface Props {
+export interface Props {
   lens: Array<Lens>
 }
 

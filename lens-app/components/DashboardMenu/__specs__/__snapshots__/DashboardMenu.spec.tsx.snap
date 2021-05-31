@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshots 1`] = `
+<aside
+  className="aside"
+>
+  <ul>
+    <li
+      onClick={[Function]}
+    >
+      Lens
+    </li>
+    <li
+      onClick={[Function]}
+    >
+      Patients
+    </li>
+    <li
+      onClick={[Function]}
+    >
+      Hospitals
+    </li>
+  </ul>
+</aside>
+`;

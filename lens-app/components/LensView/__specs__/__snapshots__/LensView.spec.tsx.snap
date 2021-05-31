@@ -1,0 +1,543 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshots 1`] = `
+<div
+  className="lensView"
+>
+  <Files
+    activeDot=""
+    allergies={
+      Array [
+        Object {
+          "box": Object {
+            "b": 897,
+            "l": 82,
+            "r": 1010,
+            "t": 52,
+          },
+          "confidence": 1,
+          "drugBankCode": "DB01053",
+          "humanName": "Penacillin",
+          "name": "Penacillin",
+          "page": 1,
+          "weight": 1.2,
+        },
+      ]
+    }
+    files={
+      Array [
+        Object {
+          "height": 2200,
+          "id": "91298321783_0",
+          "order": 0,
+          "width": 1700,
+        },
+        Object {
+          "height": 2200,
+          "id": "91298321783_1",
+          "order": 1,
+          "width": 1700,
+        },
+        Object {
+          "height": 2200,
+          "id": "91298321783_2",
+          "order": 2,
+          "width": 1700,
+        },
+      ]
+    }
+    flags={
+      Array [
+        Object {
+          "box": Object {
+            "b": 720,
+            "l": 90,
+            "r": 1100,
+            "t": 40,
+          },
+          "confidence": 1,
+          "humanName": "Follow up",
+          "name": "PrimaryCareProvider/FollowUp",
+          "page": 0,
+          "weight": 0.7,
+        },
+        Object {
+          "box": Object {
+            "b": 1320,
+            "l": 20,
+            "r": 635,
+            "t": 80,
+          },
+          "confidence": 1,
+          "humanName": "Heart failure",
+          "name": "CardiacFaliure/Symptoms",
+          "page": 0,
+          "weight": 1.2,
+        },
+      ]
+    }
+    handleDotClick={[Function]}
+    lensId="91298321783"
+    medications={
+      Array [
+        Object {
+          "box": Object {
+            "b": 1107,
+            "l": 20,
+            "r": 375,
+            "t": 64,
+          },
+          "confidence": 1,
+          "drugBankCode": "DB00945",
+          "humanName": "Aspirin",
+          "moreInfo": Array [
+            Object {
+              "label": "Dose",
+              "value": "80MG",
+            },
+            Object {
+              "label": "Dispense",
+              "value": "30",
+            },
+            Object {
+              "label": "Refill",
+              "value": "1",
+            },
+          ],
+          "name": "Aspirin",
+          "page": 2,
+          "weight": 0.5,
+        },
+      ]
+    }
+    problems={
+      Array [
+        Object {
+          "box": Object {
+            "b": 780,
+            "l": 60,
+            "r": 735,
+            "t": 45,
+          },
+          "confidence": 1,
+          "humanName": "Sleep apnea",
+          "icd10Code": "G47.30",
+          "name": "SleepApnea",
+          "page": 1,
+          "weight": 0.8,
+        },
+        Object {
+          "box": Object {
+            "b": 565,
+            "l": 54,
+            "r": 660,
+            "t": 32,
+          },
+          "confidence": 0.9,
+          "humanName": "Acid reflux",
+          "icd10Code": "G21",
+          "name": "GERD",
+          "page": 1,
+          "weight": 0.7,
+        },
+      ]
+    }
+  />
+  <aside
+    className="sidebar"
+  >
+    <div
+      className="navbar"
+    />
+    <div
+      className="heading"
+    >
+      Outline
+    </div>
+    <div
+      className="sidebarTabs"
+    >
+      <ul
+        className="tabs"
+      >
+        <li
+          className="tab"
+        >
+          <input
+            defaultChecked={true}
+            id="tab1"
+            name="tabs"
+            type="radio"
+          />
+          <label
+            htmlFor="tab1"
+            onClick={[Function]}
+          >
+            Review
+          </label>
+          <div
+            className="content"
+            id="tab-content1"
+          >
+            <LensInfoGroup
+              actions={
+                Array [
+                  "Call",
+                  "Message",
+                  "Calendar",
+                ]
+              }
+              activeDot=""
+              groupName="Flag"
+              handleClearDot={[Function]}
+              handleDotClick={[Function]}
+              handleMoveItem={[Function]}
+              handleRemoveItem={[Function]}
+              hasActions={true}
+              list={
+                Array [
+                  Object {
+                    "box": Object {
+                      "b": 720,
+                      "l": 90,
+                      "r": 1100,
+                      "t": 40,
+                    },
+                    "confidence": 1,
+                    "humanName": "Follow up",
+                    "name": "PrimaryCareProvider/FollowUp",
+                    "page": 0,
+                    "weight": 0.7,
+                  },
+                  Object {
+                    "box": Object {
+                      "b": 1320,
+                      "l": 20,
+                      "r": 635,
+                      "t": 80,
+                    },
+                    "confidence": 1,
+                    "humanName": "Heart failure",
+                    "name": "CardiacFaliure/Symptoms",
+                    "page": 0,
+                    "weight": 1.2,
+                  },
+                ]
+              }
+              listDone={Array []}
+              listDoneSetter={[Function]}
+              listSetter={[Function]}
+            />
+            <LensInfoGroup
+              activeDot=""
+              groupName="Problem"
+              handleClearDot={[Function]}
+              handleDotClick={[Function]}
+              handleMoveItem={[Function]}
+              handleRemoveItem={[Function]}
+              list={
+                Array [
+                  Object {
+                    "box": Object {
+                      "b": 780,
+                      "l": 60,
+                      "r": 735,
+                      "t": 45,
+                    },
+                    "confidence": 1,
+                    "humanName": "Sleep apnea",
+                    "icd10Code": "G47.30",
+                    "name": "SleepApnea",
+                    "page": 1,
+                    "weight": 0.8,
+                  },
+                  Object {
+                    "box": Object {
+                      "b": 565,
+                      "l": 54,
+                      "r": 660,
+                      "t": 32,
+                    },
+                    "confidence": 0.9,
+                    "humanName": "Acid reflux",
+                    "icd10Code": "G21",
+                    "name": "GERD",
+                    "page": 1,
+                    "weight": 0.7,
+                  },
+                ]
+              }
+              listDone={Array []}
+              listDoneSetter={[Function]}
+              listSetter={[Function]}
+            />
+            <LensInfoGroup
+              activeDot=""
+              groupName="Allergy"
+              handleClearDot={[Function]}
+              handleDotClick={[Function]}
+              handleMoveItem={[Function]}
+              handleRemoveItem={[Function]}
+              list={
+                Array [
+                  Object {
+                    "box": Object {
+                      "b": 897,
+                      "l": 82,
+                      "r": 1010,
+                      "t": 52,
+                    },
+                    "confidence": 1,
+                    "drugBankCode": "DB01053",
+                    "humanName": "Penacillin",
+                    "name": "Penacillin",
+                    "page": 1,
+                    "weight": 1.2,
+                  },
+                ]
+              }
+              listDone={Array []}
+              listDoneSetter={[Function]}
+              listSetter={[Function]}
+            />
+            <LensInfoGroup
+              activeDot=""
+              groupName="Medication"
+              handleClearDot={[Function]}
+              handleDotClick={[Function]}
+              handleMoveItem={[Function]}
+              handleRemoveItem={[Function]}
+              hasActions={true}
+              list={
+                Array [
+                  Object {
+                    "box": Object {
+                      "b": 1107,
+                      "l": 20,
+                      "r": 375,
+                      "t": 64,
+                    },
+                    "confidence": 1,
+                    "drugBankCode": "DB00945",
+                    "humanName": "Aspirin",
+                    "moreInfo": Array [
+                      Object {
+                        "label": "Dose",
+                        "value": "80MG",
+                      },
+                      Object {
+                        "label": "Dispense",
+                        "value": "30",
+                      },
+                      Object {
+                        "label": "Refill",
+                        "value": "1",
+                      },
+                    ],
+                    "name": "Aspirin",
+                    "page": 2,
+                    "weight": 0.5,
+                  },
+                ]
+              }
+              listDone={Array []}
+              listDoneSetter={[Function]}
+              listSetter={[Function]}
+            />
+          </div>
+        </li>
+        <li
+          className="tab"
+        >
+          <input
+            defaultChecked={false}
+            id="tab2"
+            name="tabs"
+            type="radio"
+          />
+          <label
+            htmlFor="tab2"
+            onClick={[Function]}
+          >
+            Done
+          </label>
+          <div
+            className="content"
+            id="tab-content2"
+          >
+            <LensInfoGroup
+              actions={
+                Array [
+                  "Call",
+                  "Message",
+                  "Calendar",
+                ]
+              }
+              activeDot=""
+              groupName="Flag"
+              handleClearDot={[Function]}
+              handleDotClick={[Function]}
+              handleMoveItem={[Function]}
+              handleRemoveItem={[Function]}
+              hasActions={true}
+              isDoneList={true}
+              list={Array []}
+              listDone={
+                Array [
+                  Object {
+                    "box": Object {
+                      "b": 720,
+                      "l": 90,
+                      "r": 1100,
+                      "t": 40,
+                    },
+                    "confidence": 1,
+                    "humanName": "Follow up",
+                    "name": "PrimaryCareProvider/FollowUp",
+                    "page": 0,
+                    "weight": 0.7,
+                  },
+                  Object {
+                    "box": Object {
+                      "b": 1320,
+                      "l": 20,
+                      "r": 635,
+                      "t": 80,
+                    },
+                    "confidence": 1,
+                    "humanName": "Heart failure",
+                    "name": "CardiacFaliure/Symptoms",
+                    "page": 0,
+                    "weight": 1.2,
+                  },
+                ]
+              }
+              listDoneSetter={[Function]}
+              listSetter={[Function]}
+            />
+            <LensInfoGroup
+              activeDot=""
+              groupName="Problem"
+              handleClearDot={[Function]}
+              handleDotClick={[Function]}
+              handleMoveItem={[Function]}
+              handleRemoveItem={[Function]}
+              isDoneList={true}
+              list={Array []}
+              listDone={
+                Array [
+                  Object {
+                    "box": Object {
+                      "b": 780,
+                      "l": 60,
+                      "r": 735,
+                      "t": 45,
+                    },
+                    "confidence": 1,
+                    "humanName": "Sleep apnea",
+                    "icd10Code": "G47.30",
+                    "name": "SleepApnea",
+                    "page": 1,
+                    "weight": 0.8,
+                  },
+                  Object {
+                    "box": Object {
+                      "b": 565,
+                      "l": 54,
+                      "r": 660,
+                      "t": 32,
+                    },
+                    "confidence": 0.9,
+                    "humanName": "Acid reflux",
+                    "icd10Code": "G21",
+                    "name": "GERD",
+                    "page": 1,
+                    "weight": 0.7,
+                  },
+                ]
+              }
+              listDoneSetter={[Function]}
+              listSetter={[Function]}
+            />
+            <LensInfoGroup
+              activeDot=""
+              groupName="Allergy"
+              handleClearDot={[Function]}
+              handleDotClick={[Function]}
+              handleMoveItem={[Function]}
+              handleRemoveItem={[Function]}
+              isDoneList={true}
+              list={Array []}
+              listDone={
+                Array [
+                  Object {
+                    "box": Object {
+                      "b": 897,
+                      "l": 82,
+                      "r": 1010,
+                      "t": 52,
+                    },
+                    "confidence": 1,
+                    "drugBankCode": "DB01053",
+                    "humanName": "Penacillin",
+                    "name": "Penacillin",
+                    "page": 1,
+                    "weight": 1.2,
+                  },
+                ]
+              }
+              listDoneSetter={[Function]}
+              listSetter={[Function]}
+            />
+            <LensInfoGroup
+              activeDot=""
+              groupName="Medication"
+              handleClearDot={[Function]}
+              handleDotClick={[Function]}
+              handleMoveItem={[Function]}
+              handleRemoveItem={[Function]}
+              hasActions={true}
+              isDoneList={true}
+              list={Array []}
+              listDone={
+                Array [
+                  Object {
+                    "box": Object {
+                      "b": 1107,
+                      "l": 20,
+                      "r": 375,
+                      "t": 64,
+                    },
+                    "confidence": 1,
+                    "drugBankCode": "DB00945",
+                    "humanName": "Aspirin",
+                    "moreInfo": Array [
+                      Object {
+                        "label": "Dose",
+                        "value": "80MG",
+                      },
+                      Object {
+                        "label": "Dispense",
+                        "value": "30",
+                      },
+                      Object {
+                        "label": "Refill",
+                        "value": "1",
+                      },
+                    ],
+                    "name": "Aspirin",
+                    "page": 2,
+                    "weight": 0.5,
+                  },
+                ]
+              }
+              listDoneSetter={[Function]}
+              listSetter={[Function]}
+            />
+          </div>
+        </li>
+      </ul>
+    </div>
+  </aside>
+</div>
+`;

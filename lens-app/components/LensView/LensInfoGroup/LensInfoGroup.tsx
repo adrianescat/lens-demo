@@ -14,7 +14,7 @@ import {
 } from '../../../types/lens';
 import PopoverMenu from '../../PopoverMenu';
 
-interface Props {
+export interface Props {
   groupName: string;
   list: Array<any>;
   listDone: Array<Flag | Problem | Allergy | Medication>;

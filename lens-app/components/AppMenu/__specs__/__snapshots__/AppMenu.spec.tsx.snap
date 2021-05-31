@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshots 1`] = `
+<section
+  className="appMenu"
+>
+  <Link
+    href="/dashboard"
+  >
+    <div
+      className="option"
+    >
+      <Image
+        alt="Go to dashboard"
+        height={300}
+        src="/img/dashboard.svg"
+        width={300}
+      />
+      <div>
+        DASHBOARD
+      </div>
+    </div>
+  </Link>
+  <div
+    className="option"
+  >
+    <Image
+      alt="Add Lens"
+      className="unavailable"
+      height={300}
+      src="/img/add_lens.svg"
+      width={300}
+    />
+    <div>
+      ADD LENS
+    </div>
+  </div>
+  <div
+    className="option"
+  >
+    <Image
+      alt="Support"
+      className="unavailable"
+      height={300}
+      src="/img/support.svg"
+      width={300}
+    />
+    <div>
+      SUPPORT
+    </div>
+  </div>
+</section>
+`;
